@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NetCoreAPI.Contracts.V1.Requests;
 using NetCoreAPI.Contracts.V1.Responses;
@@ -8,6 +10,7 @@ using NetCoreAPI.Services;
 
 namespace NetCoreAPI.Controllers.v1
 {
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Route("api/v1/[controller]")]
     [ApiController]
     public class ProjectsController : ControllerBase
