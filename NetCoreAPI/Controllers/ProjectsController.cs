@@ -8,13 +8,13 @@ namespace NetCoreAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class ProjectsController : ControllerBase
     {
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new[] { "value1", "value2" };
         }
 
         // GET api/values/5
