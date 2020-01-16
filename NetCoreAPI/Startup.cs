@@ -4,7 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
+using NetCoreAPI.Domain;
 using NetCoreAPI.Options;
+using NetCoreAPI.Services;
 
 namespace NetCoreAPI
 {
@@ -26,6 +28,8 @@ namespace NetCoreAPI
             {
                 x.SwaggerDoc("v1",new OpenApiInfo{Title = "NET Core API", Version = "v1",Description = "Description"});
             });
+
+            services.AddSingleton<IProjectService,ProjectService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
