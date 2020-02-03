@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace NetCoreAPI.Contracts.V1.Responses
+﻿namespace CaseWebsites.Service.Contracts.V1.Responses
 {
     public class AuthenticateUserReponse
     {

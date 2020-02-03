@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using NetCoreAPI.Domain;
+using CaseWebsites.Service.Domain;
 
-namespace NetCoreAPI.Services
+namespace CaseWebsites.Service.Services
 {
     public interface IProjectService
     {

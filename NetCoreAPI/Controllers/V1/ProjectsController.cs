@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using CaseWebsites.Service.Contracts.V1.Requests;
+using CaseWebsites.Service.Contracts.V1.Responses;
+using CaseWebsites.Service.Domain;
+using CaseWebsites.Service.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using NetCoreAPI.Contracts.V1.Requests;
-using NetCoreAPI.Contracts.V1.Responses;
-using NetCoreAPI.Domain;
-using NetCoreAPI.Services;
 
-namespace NetCoreAPI.Controllers.v1
+namespace CaseWebsites.Service.Controllers.V1
 {
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Route("api/v1/[controller]")]

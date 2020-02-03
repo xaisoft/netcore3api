@@ -1,18 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+using CaseWebsites.Service.Contracts.V1.Requests;
+using CaseWebsites.Service.Options;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
-using NetCoreAPI.Contracts.V1.Requests;
-using NetCoreAPI.Domain;
-using NetCoreAPI.Options;
 
-namespace NetCoreAPI.Controllers.V1
+namespace CaseWebsites.Service.Controllers.V1
 {
     [Route("api/[controller]")]
     [ApiController]

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace NetCoreAPI.Options
+﻿namespace CaseWebsites.Service.Options
 {
     public class SwaggerOptions
     {

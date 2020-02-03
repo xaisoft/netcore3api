@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
+using CaseWebsites.Data;
+using CaseWebsites.Service.Options;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -8,11 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using NetCoreAPI.Domain;
-using NetCoreAPI.Options;
-using NetCoreAPI.Services;
 
-namespace NetCoreAPI
+namespace CaseWebsites.Service
 {
     public class Startup
     {
@@ -33,7 +32,12 @@ namespace NetCoreAPI
 
             services.AddSingleton(jwtSettings);
 
-        
+          //  SqlSettings sqlSettings = new SqlSettings();
+          RedisSettings redisSettings = new RedisSettings();
+
+            Configuration.Bind(nameof(redisSettings),redisSettings);
+            services.AddSingleton<IWebsiteProvider, RedisWebsiteProvider>();
+            //services.AddTransient<IWebsiteProvider>(f => new Red(redisSettings.ConnectionString));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
@@ -93,7 +97,11 @@ namespace NetCoreAPI
              
             });
 
-            services.AddSingleton<IProjectService,ProjectService>();
+    
+
+           
+
+ 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
